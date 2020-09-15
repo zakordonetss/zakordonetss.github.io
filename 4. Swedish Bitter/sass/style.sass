@@ -1,0 +1,829 @@
+@import reset
+
+//Variables==============================================
+
+$font-grey: #9a9a9a
+$font-white: #ffffff
+$font-facts: #a4c58c
+$font-titles: #303030
+$font-number-set: #f7f9f3
+
+$bg-button: #7eb252
+$logo-shadow: #000
+$circle-color: #e4eddc
+$bg-interesting: #f6f9f3
+$border-interesring: #e6efde
+$bg-pseudo-circles: #a5c98a
+$border-information: #c8dcba
+$bg-set: #f6f9f3
+
+
+//Mixines=================================================
+=fonts($family: ('Montserrat', sans-serif), $weight: 400, $size: 16px, $color: #303030)
+  font-family: $family
+  font-weight: $weight
+  font-size: $size
+  color: $color
+
+=push--auto 
+  margin: 
+   left: auto
+   right: auto
+
+=pseudo($display: block, $pos: absolute, $content: '')
+  content: $content
+  display: $display
+  position: $pos
+
+=border($width: 2px, $style: dashed, $color: $bg-button)
+  border-width: $width
+  border-style: $style
+  border-color: $color
+  padding: 3px
+  box-sizing: content-box
+  margin: 0 -5px
+
+=v-center($position: absolute, $top: 50%, $translateY: translateY(-50%))
+  position: $position
+  top: $top
+  transform: $translateY
+
+=circle($width: 25px, $height: 25px, $bw: 5px, $bs: solid, $bc: $circle-color)
+  +pseudo
+  width: $width
+  height: $height
+  border-width: $bw
+  border-style: $bs
+  border-color: $bc
+  border-radius: 50%
+
+=title-style($fz: 40px, $fw: 700, $lh: 50px, $color: $font-titles, $width: 450px)
+  font-size: $fz
+  font-weight: $fw
+  line-height: $lh
+  color: $color
+  width: $width
+
+=arrow($width: 10px, $height: 10px, $bw: 2px, $bc: $bg-pseudo-circles, $tr: rotate(-45deg))
+  width: $width
+  height: $height
+  border-width: $bw
+  border-color: $bc
+  transform: $tr
+  border-style: solid
+  border-left:  none
+  border-top: none
+  +pseudo
+
+
+
+
+%subtitles-style
+  font-size: 14px
+  line-height: 20px
+  font-weight: 700
+  text-transform: uppercase
+
+// Fonts  
+body 
+  +fonts
+
+
+/** General ======================== **/
+
+.container
+  max-width: 1200px
+  height: auto
+  padding: 0 15px
+  +push--auto
+
+//btn start
+.button
+  position: absolute
+  width: 500px
+  height: 60px
+
+  right: 0
+  bottom: -300px
+
+  color: $font-white
+  text-align: center
+  background: $bg-button
+  transition: background .1s linear
+
+  &:hover,
+  &:focus,    
+  &:active
+    background: #8dcd57
+    box-shadow: 0 0 30px rgba(0, 0, 0, .2) inset
+
+  &__link
+    position: relative
+    display: block
+    line-height: 60px
+    height: 100%
+    width: 100%
+    font-size: 14px
+    font-weight: 700
+    text-transform: uppercase
+
+    &::after
+      +pseudo
+      width: 30px
+      height: 1px
+
+      right: 70px
+      top: 50%
+
+      background-color: $font-white
+
+    &::before
+      +pseudo
+      width: 7px
+      height: 7px 
+      border-right: 1px solid $font-white
+      border-bottom: 1px solid $font-white
+
+      right: 68px
+      top: 49%
+
+      transform: rotate(-45deg) translateY(-50%)
+//btn end
+
+.title
+  +title-style
+
+
+
+/** header ===================== **/
+
+.header
+  width: 100%
+  min-height: 105px
+
+  &__inner
+    display: flex
+    justify-content: space-between
+    align-items: center
+    min-height: 105px
+
+.logo
+  position: relative
+  width: 198px
+  height: 29px
+
+  &:focus
+    transform: scale(1.02)
+    
+  &::after
+    +pseudo($display: block, $pos: absolute, $content: 'Доставка по всей России')
+    left: 230px
+    bottom: 5px
+    width: 250px
+    color: $font-grey
+    cursor: default
+  
+  &:focus::after
+    left: 225px
+    
+  &__img
+    max-width: 100%
+    height: auto
+
+.mobile-phone
+  position: relative
+  text-align: end
+
+  &__number
+    display: block
+    font-weight: 500
+    font-size: 20px
+    margin-bottom: 9px
+  
+  &__number:focus
+    transform: scale(1.05)
+  
+  p
+    font-size: 12px
+    color: $font-grey
+
+  &::before
+    +pseudo
+    width: 16px
+    height: 16px
+    right: 105%
+    top: 3px 
+
+    background-image: url(../images/phone.png)
+    background-size: cover
+    background-repeat: no-repeat
+
+
+/** Intro =============================== **/
+
+.intro
+  width: 100%
+  min-height: 545px
+
+  background: url("../images/intro_bg.jpg") no-repeat
+  background-size: cover
+
+  &__indents
+    margin-bottom: 195px
+
+  &__img
+    position: absolute
+    left: 150px
+    top: 90px
+
+    height: 645px
+    width: auto
+
+  &__inner
+    position: relative
+    padding: 165px 0 0 600px
+
+    color: $font-white
+
+  &__suptitle
+    text-transform: uppercase
+    font-size: 14px
+    font-weight: bold
+    margin-bottom: 15px
+
+  &__title 
+    font-size: 60px
+    margin-bottom: 40px
+    font-weight: 600
+
+  p
+    font-size: 18px
+
+
+/** Facts ========================== **/
+
+.facts
+  width: 100%
+  min-height: 400px
+
+  &__inner
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+
+    padding-top: 135px
+
+  &__item
+    position: relative
+    max-width: 230px
+
+    &::before
+      +circle
+      left: -35px
+      top: -35px
+
+
+  &__index
+    font-weight: 600
+    font-size: 18px
+    color: $font-facts
+
+    border-bottom: 2px solid $font-facts
+    width: fit-content
+    padding-bottom: 5px
+    margin-bottom: 25px
+
+  &__index span
+    font-size: 30px
+
+
+/** Intresting ================================ **/
+
+.interesting
+  width: 100%
+  min-height: 540px
+
+  background-color: $bg-interesting
+
+  &__indents
+    margin: 180px 0 290px
+
+  &__inner
+    position: relative
+
+  &__title
+    display: block
+    position: absolute
+    top: -145px
+    left: 0
+
+  &__list
+    width: 650px
+
+    counter-reset: a li
+
+  &__list-item
+    width: 100%
+    height: 70px
+    padding-left: 40px
+
+    border-bottom: 1px solid $border-interesring
+
+    // pseudo-circles
+    &::before
+      +pseudo($content: "0" counter(li))
+      counter-increment: li
+      z-index: 10
+      text-align: center
+      font-size: 12px
+      font-weight: 700
+      line-height: 25px
+      color: $font-white
+      background-color: $bg-pseudo-circles
+
+      width: 45px
+      height: 45px
+      border: 10px solid rgba(255, 255, 255, 0.8)
+      border-radius: 50%
+
+      opacity: 0
+      transition: opacity .2s linear
+
+    &:first-child::before
+      right: 310px
+
+    &:nth-child(2)::before
+      right: 140px
+      top: 60px
+
+    &:nth-child(3)::before,
+    &:nth-child(5)::before,
+    &:last-child::before
+      right: 227px
+      top: -165px
+
+    &:nth-child(4)::before
+      right: 227px
+      top: 10px
+
+    &:nth-child(6)::before
+      right: 192px
+      top: 170px
+
+    &:hover::before,
+    &:active::before,
+    &:focus::before
+      opacity: 1
+    // pseudo-circles end
+
+
+  &__link
+    position: relative
+    display: block
+    line-height: 70px
+    text-transform: uppercase
+    font-size: 14px
+    font-weight: 600
+
+    &::before
+      +pseudo($content: "0" counter(a) ".")
+      counter-increment: a
+
+      left: -40px
+      top: 50%
+      transform: translateY(-50%)
+
+      font-size: 14px
+      font-weight: 600
+      color: $font-facts
+
+    &::after
+      +arrow($tr: (rotate(-45deg) translateY(-50%)))
+      right: 50px
+      top: 50%
+      opacity: 0
+      transition: opacity .2s linear
+
+    &:hover::after,
+    &:focus::after,
+    &:active::after
+      opacity: 1
+
+  &__img
+    position: absolute
+    max-width: 500px
+    height: auto
+    right: 0
+    top: -200px
+
+  &__btn
+    bottom: -130px
+
+
+
+/** Success =============================== **/
+
+.success
+  position: relative
+  width: 100%
+  min-height: 645px
+  padding-top: 40px
+
+  background-image: url("../images/woman.jpg")
+  background-repeat: no-repeat
+  background-position: right 49vw top 0
+  background-size: contain
+
+  &__indents
+    margin-bottom: 525px
+
+  &__inner
+    position: relative
+
+    padding-left: 58%
+
+  &__title
+    padding-bottom: 40px
+
+  &__subtitle
+    @extend %subtitles-style
+    margin-bottom: 40px
+
+  &__list
+    height: 310px
+    display: flex
+    flex-wrap: wrap
+    align-content: space-between
+
+  &__list-item
+    position: relative
+    padding-left: 45px
+    margin-bottom: 10px
+
+    &::before
+      +arrow($tr: (rotate(-45deg) translateY(-50%)))
+      left: 0
+      top: 50%
+
+.information
+  position: absolute
+  left: 0
+  bottom: 0
+
+  padding-top: 20px
+  padding-left: 20px
+
+  width: 600px
+  background-color: white
+
+  &__item
+    width: 560px
+    padding: 38px
+
+    border: 1px solid $border-information
+
+  &__btn
+    bottom: -60px
+    left: 20px
+    width: 560px
+    text-align: left
+    padding-left: 45px
+
+
+  & .button__link::after
+    right: 57px
+
+
+  & .button__link::before
+    right: 55px
+
+
+/** Set ======================================== **/
+
+.set
+  width: 100%
+  height: 380px
+
+  background-color: $bg-set
+
+  &__indents
+    margin-bottom: 200px
+
+  &__wrapper
+    position: relative
+
+  &__inner
+    position: absolute
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    
+    padding: 0 15px 30px
+    width: 100%
+    top: -50px
+    z-index: 0
+
+    background-color: white
+
+    counter-reset: img
+
+  &__title
+    position: absolute
+
+    top: -250px
+    left: 0
+
+  &__item
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 370px
+    height: 330px
+
+    border: 1px solid $border-information
+
+  &__item-inner
+    position: relative
+    height: 145px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+    &::after
+      +pseudo($content: "0" counter(img))
+      counter-increment: img
+      font-size: 150px
+      font-weight: 900
+      z-index: -5
+      color: $font-number-set
+
+      top: -35px
+
+  &__item-icon
+    max-width: 100px
+
+
+  &__item-title
+    display: block
+    margin-top: auto
+    @extend %subtitles-style
+
+/** Composition =============================== **/
+
+.composition
+  $comp-h: 930px
+  min-height: $comp-h
+
+  &__indents
+    margin-bottom: 380px
+
+  &__inner
+    position: relative
+    display: flex
+    flex-wrap: wrap
+    align-items: flex-end
+    justify-content: space-between
+
+    min-height: $comp-h
+
+  &__column-pictures
+    flex: 0 0 570px
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    align-content: space-between
+    justify-content: space-between
+
+    min-height: 870px
+
+  &__column-text
+    flex: 0 0 525px
+    align-self: flex-start
+
+  &__component
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    padding: 15px
+    width: 270px
+    height: 270px
+    background: $bg-set url("../images/comp_01.png") no-repeat center
+    color: $font-facts
+
+    &::after
+      +pseudo($content: "Корень дягиля (дудника) лекарственного")
+      width: 240 / 270 * 100%
+      height: 240 / 270 * 100%
+      text-align:  center
+      color: white
+      font-weight: 700
+      font-size: 14px
+      line-height: 20px
+      padding: 100px 10px 10px
+
+      background: linear-gradient(to right, rgba(121, 168, 71, .95) 10%, rgba(121, 168, 71, .8) 50%, rgba(121, 168, 71, .9) 90%)
+
+      opacity: 0
+      transition: opacity .2s linear
+      
+    &:hover::after
+      opacity: 1
+
+    &:nth-child(2)
+      background-image: url("../images/comp_02.png")
+      &::after
+        content: "Карлина акаулис, безстволовая, серебряная"
+
+    &:nth-child(3)
+      background-image: url("../images/comp_03.png")
+      &::after
+        content: "Коричник камфорный, или камфорный лавр"
+
+    &:nth-child(4)
+      background-image: url("../images/comp_04.png")
+      &::after
+        content: "Ясень манновый, или Ясень манный"
+
+    &:nth-child(5)
+      background-image: url("../images/comp_05.png")
+      &::after
+        content: "Мирра, Коммифора мирровая"
+
+    &:nth-child(6)
+      background-image: url("../images/comp_06.png")
+      &::after
+        content: "Смесь трав по рецепту Марии Трэбэн"
+
+  &__component-number,
+  &__component-name
+    font-size: 14px
+
+    transform: rotate(-90deg)
+    align-self: flex-start
+
+  &__component-number
+    position: relative
+    font-weight: 700
+
+    &::before
+      +pseudo
+      width: 15px
+      height: 2px
+      top: 50%
+      left: -20px
+      transform: translateY(-50%)
+      background-color: $font-facts
+
+  &__component-name
+    transform: rotate(-90deg) translateY(240px)
+    transform-origin: left bottom
+
+  &__component-text
+    position: absolute
+    font-size: 14px
+    font-weight: 700
+    line-height: 22px
+    color: $font-titles
+    text-transform: uppercase
+
+    left: 50px
+    bottom: 50px
+    width: 97px
+
+  &__title
+    +title-style
+    margin-bottom: 50px
+
+  &__list-item
+    position: relative
+    padding-left: 45px
+    margin-bottom: 30px
+
+    &::before
+      +pseudo
+      width: 7px
+      height: 7px
+      left: 20px
+      top: 5px
+      border-radius: 50%
+
+      background-color: $font-facts
+
+
+
+
+  &__btn
+    position: absolute
+    width: 350px
+
+    bottom: 0
+    right: 0
+
+    .button__link::after
+      right: 40px
+
+    .button__link::before
+      right: 38px
+
+
+  
+/** Guarantee ================================= **/
+
+.guarantee
+  width: 100%
+  $guar-min-h: 565px
+  min-height: $guar-min-h
+
+  background-color: $bg-set
+
+  &__inner
+    position: relative
+    padding-top: 40px
+    padding-left: 70px
+    height: $guar-min-h
+  
+  &__title
+    position: absolute
+    +title-style
+
+    left: 0
+    top: -85px
+
+  &__text
+    width: 515px
+    margin-bottom: 45px
+
+    @extend %subtitles-style
+    line-height: 24px
+
+  &__certificate
+    position: absolute
+
+    right: 0
+    bottom: 102px
+
+  
+  &__img
+    max-width: 416px
+    height: auto
+
+
+.advertising 
+  width: 570px
+  height: 320px
+
+  background-color: white
+  padding: 19px
+
+  &__inner
+    position: relative
+    height: 100%
+    padding: 50px
+
+    border: 1px solid $border-information
+
+    &::before
+      +pseudo($content: "HO:")
+      width: 40px
+      font-weight: 700
+      color: $border-information
+      text-align: center
+      letter-spacing: 1.2px
+
+      left: 50px
+      top: -8px
+
+      background-color: white
+
+    p
+      line-height: 22px
+      margin-bottom: 25px
+
+  &__btn
+    @extend .composition__btn
+
+
+
+/** Footer ==================================== **/
+
+.footer
+  @extend .header 
+
+  &__inner
+    @extend .header__inner
+
+  &__link
+    display: inline-block
+    font-size: 12px
+    color: $font-grey
+    border-bottom: 1px solid $font-grey
+
+    &:hover
+      border-color: transparent
+      
+
+  .logo::after
+    display: none

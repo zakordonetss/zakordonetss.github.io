@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Product</title>
+</head>
+<body>
+
+  <!-- HEADER -->
+
+  <header class="header">
+    <div class="wrapper">
+      <div class="wrapper_header">
+        <nav class="header_nav">
+          <ul class="nav_list">
+            <li class="header_item">
+              <a href="woman.html" class="header_link">Woman</a>
+            </li>
+            <li class="header_item">
+              <a href="woman.html" class="header_link">Man</a>
+            </li>
+            <li class="header_item">
+              <a href="woman.html" class="header_link">New</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header_logo">
+          <a href="index.html" class="header_logo-link">
+            Nîmes
+          </a>
+        </div>
+        <div class="users_nav">
+          <a href="#" class="users_nav-link">
+            <img
+              class="users_nav-img users_nav-search"
+              src="img/magnifier.png"
+              alt="search"
+            />
+          </a>
+          <a href="#" class="users_nav-link">
+            <img
+              class="users_nav-img users_nav-basket"
+              src="img/basket.png"
+              alt="basket"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- /HEADER -->
+
+  <main>
+
+    <!-- Commodity -->
+
+    <section class="commodity">
+      <div class="wrapper">
+        <div class="commodity_wrapper">
+
+          <!-- SLIDER -->
+
+          <div class="commodity_slider">
+
+            <!-- hidden radio-buttons -->
+            <input checked type="radio" class="slider" name="slider" id="swich1">
+            <input type="radio" class="slider" name="slider" id="swich2">
+            <input type="radio" class="slider" name="slider" id="swich3">
+            <input type="radio" class="slider" name="slider" id="swich4">
+            <input type="radio" class="slider" name="slider" id="swich5">
+
+            <div class="commodity_sl_owerflow">
+              <div class="commodity_photos">
+
+                <img class="commodity_photo" src="img/product/product_1.jpg" alt="product">
+                <img class="commodity_photo" src="img/product/product_2.jpg" alt="product">
+                <img class="commodity_photo" src="img/product/product_3.jpg" alt="product">
+                <img class="commodity_photo" src="img/product/product_4.jpg" alt="product">
+                <img class="commodity_photo" src="img/product/product_5.jpg" alt="product">
+
+              </div>
+            </div>
+
+            <!-- arrows for main photo -->
+            <div class="commodity_arrows">
+              <label tabindex="0" for="swich1"></label>
+              <label tabindex="0" for="swich2"></label>
+              <label tabindex="0" for="swich3"></label>
+              <label tabindex="0" for="swich4"></label>
+              <label tabindex="0" for="swich5"></label>
+            </div>
+
+            <!-- supporting photos -->
+            <div class="slider_controls">
+
+              <label class="controller controller1" for="swich1">
+                <img class="controller-img" src="img/product/product_1.jpg" alt="product">
+              </label>
+              <label class="controller controller2" for="swich2">
+                <img class="controller-img" src="img/product/product_2.jpg" alt="product">
+              </label>
+              <label class="controller controller3" for="swich3">
+                <img class="controller-img" src="img/product/product_3.jpg" alt="product">
+              </label>
+              <label class="controller controller4" for="swich4">
+                <img class="controller-img" src="img/product/product_4.jpg" alt="product">
+              </label>
+              <label class="controller controller5" for="swich5">
+                <img class="controller-img" src="img/product/product_5.jpg" alt="product">
+              </label>
+
+            </div>
+
+          </div>
+
+          <!-- /SLIDER -->
+
+          <!-- SPECIFICATIONS -->
+          
+          <div class="commodity_specifications">
+
+            <h1 class="commodity_name">Overalls</h1>
+
+            <p class="commodity_description">Overalls in washed organic cotton denim. Collar, button fly, and adjustable belt at waist. Chest pockets with flap. Long, gently flared sleeves and straight legs with front pockets and back pockets.</p>
+            
+            <form action="commodity_characteristic">
+
+              <h4>Color</h4>
+              
+              <ul class="commodity_color">
+                <li class="commodity_color_container">
+                  <input checked type="radio" value="light grey" name="color" id="light_grey">
+                  <label for="light_grey" class="commodity_light-grey"></label>
+                </li>
+
+                <li class="commodity_color_container">
+                  <input type="radio" value="blue" name="color" id="blue">
+                  <label for="blue" class="commodity_blue"></label>                
+                </li>
+
+                <li class="commodity_color_container">
+                  <input type="radio" value="grey" name="color" id="grey">
+                  <label for="grey" class="commodity_grey"></label>
+                </li>
+              </ul>
+
+              <h4>Size</h4>
+
+              <ul class="commodity_size">
+                <li class="commodity_size_container">
+                  <input class="commodity_size" id="commodity_xs" type="radio" value="xs" name="size">
+                  <label for="commodity_xs">XS</label>
+                </li>
+
+                <li class="commodity_size_container">
+                  <input class="commodity_size" id="commodity_s" type="radio" value="s" name="size">
+                  <label for="commodity_s">S</label>
+                </li>
+
+                <li class="commodity_size_container">
+                  <input class="commodity_size" checked id="commodity_m" type="radio" value="m" name="size">
+                  <label for="commodity_m">M</label>
+                </li>
+
+                <li class="commodity_size_container">
+                  <input class="commodity_size" id="commodity_l" type="radio" value="l" name="size">
+                  <label for="commodity_l">L</label>
+                </li>
+
+                <li class="commodity_size_container">
+                  <input class="commodity_size" id="commodity_xl" type="radio" value="xl" name="size">
+                  <label for="commodity_xl">XL</label>
+                </li>
+              </ul>
+
+              <p class="commodity_prise">$160</p>
+
+            </form>
+
+            <a href="#" class="btn btn_commodity">Add to cart</a>
+
+          </div>
+
+          <!-- /SPECIFICATIONS -->
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- /Commodity -->
+
+  <!-- You may also like -->
+
+  <section class="bessellers">
+    <div class="wrapper">
+      <div class="section_header">
+        <h2 class="section_header-title">You may also like</h2>
+        <a class="section_header-link" href="woman.html">View all</a>
+      </div>
+
+      <ul class="products_content">
+
+        <li class="product">
+          <a class="product_link" href="product.html">
+            <img class="product_image" src="img/pr2.png" alt="product">
+          </a>
+          <a class="product_name" href="product.html">Overalls</a>
+          <p class="price">$140</p>
+        </li>
+        
+        <li class="product">
+          <a class="product_link" href="product.html">
+            <img class="product_image" src="img/category_4.png" alt="product">
+          </a>
+          <a class="product_name" href="product.html">Overalls</a>
+          <p class="price">$110</p>
+        </li>
+        
+        <li class="product">
+          <a class="product_link" href="product.html">
+            <img class="product_image" src="img/pr5.png" alt="product">
+          </a>
+          <a class="product_name" href="product.html">Jacket</a>
+          <p class="price">$70</p>
+        </li>
+        
+        <li class="product">
+          <a class="product_link" href="product.html">
+            <img class="product_image" src="img/pr6.png" alt="product">
+          </a>
+          <a class="product_name" href="product.html">Jacket</a>
+          <p class="price">$60</p>
+        </li>
+        
+      </ul>
+
+    </div>
+  </section>
+
+  <!-- /You may also like -->
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+    <h3 class="footer_title"><a href="index.html">Nîmes</a></h3>
+    <ul class="footer_nav">
+      <li class="footer_nav-item"><a href="#">Shop</a></li>
+      <li class="footer_nav-item"><a href="#">Delivery</a></li>
+      <li class="footer_nav-item"><a href="#">Service</a></li>
+      <li class="footer_nav-item"><a href="#">Sitemap</a></li>
+      <li class="footer_nav-item"><a href="#">Contacts</a></li>
+    </ul>
+    <div class="footer_sm-wrapper">
+      <a href="#" class="footer_sm-item facebook"></a>
+      <a href="#" class="footer_sm-item instagram"></a>
+      <a href="#" class="footer_sm-item patreon"></a>
+      <a href="#" class="footer_sm-item twitter"></a>
+    </div>
+  </footer>
+
+  <!-- /FOOTER -->
+
+</body>
+</html>
