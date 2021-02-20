@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap')
+
+body
+    font-family: 'Oswald', sans-serif
+    // font-family: Helvetica, 'Roboto', sans-serif
+
+.product
+    display: none
+    position: relative
+    max-width: 1440px
+    margin: 0 auto
+    padding: 60px
+
+    &__top
+        display: flex
+        justify-content: space-between
+
+    &_active
+        display: block
+
+.scrollbar
+    display: flex
+    flex-direction: column
+
+    &__link
+        display: flex
+        height: 166px
+        margin: 10px
+
+        align-items: center
+        border: 2px solid #E3E2E2
+        box-sizing: border-box
+
+        cursor: pointer
+
+        &:hover
+            border: 2px solid #33F0A9
+    &__img
+        max-width: 100%
+        max-height: 115px
+
+.product-photo
+    display: flex
+    align-items: center
+
+    &__large-inner
+        display: none
+        max-width: 539px
+        height: 539px
+        margin: 10px
+        align-items: center
+
+        border: 2px solid #E3E2E2
+        box-sizing: border-box
+
+        &_active
+            display: flex
+
+    &__large-img
+        max-width: 100%
+
+// PRODUCT OPTIONS ==================================
+
+.product
+    &__options
+        width: 40%
+        margin: 10px
+
+    &__label
+        font-size: 46px
+
+    &__var
+        margin-top: 35px
+        margin-bottom: 50px
+
+.var
+    &__top
+        display: flex
+        justify-content: space-between
+        font-size: 24px
+
+        border-bottom: 2px solid #000
+
+    &__label
+        line-height: 150%
+
+    &__price
+        line-height: 150%
+        position: relative
+        margin-left: 3px
+
+        &_crossed-out::after
+            display: block
+            position: absolute
+            content: ""
+            right: 0
+            top: 50%
+            width: 100%
+            height: 2px
+            background: #D01917
+
+        &_sale
+            color: #D01917
+
+    &__colors
+        margin-top: 18px
+
+    &__link
+        position: relative
+        display: inline-block
+        width: 54px
+        height: 44px
+        margin-right: 8px
+
+        cursor: pointer
+
+        &:hover .var__img-outer::after
+            display: block
+
+    &__img
+        width: 100%
+
+        &-outer
+            transition: all .1s linear
+
+            &::after
+                left: -12px
+                bottom: -25px
+                display: none
+                position: absolute
+                content: "Blue Mirror"
+                font-family: Helvetica, 'Roboto', sans-serif
+                width: 80px
+            &_sale
+                &::before
+                    display: block
+                    position: absolute
+                    content: "SALE"
+                    right: 0
+                    top: 0
+                    width: 34px
+                    height: 16px
+                    line-height: 16px
+                    font-size: 10px
+                    text-align: center
+                    color: #FFFFFF
+                    background: #F14237
+
+// PRODUCT CARDS ==============================================
+
+.product__info
+    margin-right: 30px
+
+    &-outer
+        display: flex
+        margin: 20px 10px 10px 10px
+
+    &-column
+        display: flex
+
+.product__card
+    width: 147px
+    height: 149px
+    text-align: center
+
+    background: #33F0A9
+
+    &-label
+        font-size: 18px
+        height: 52px
+        line-height: 52px
+
+    &-info
+        font-family: Helvetica, 'Roboto', sans-serif
+        font-size: 16px
+        line-height: 140%
+        width: 134px
+        margin: 0 auto
+
+// BUTTONS ===================================
+
+.product
+
+    &__buttons
+        position: absolute
+        right: 60px
+        bottom: 80px
+
+    &__button
+        margin-top: 15px
+
+.button
+    background-color: #000
+
+    &_build
+        background-color: #33F0A9
+    &__btn
+        width: 530px
+        height: 74px
+        padding: 0
+        border: none
+        font: inherit
+        font-size: 16px
+        color: inherit
+        background-color: #33F0A9
+        transition: all .1s linear
+
+        &:hover
+            transform: translateX(-8px) translateY(-10px)
+
+        &_build
+            color: #33F0A9
+            background-color: #000
+
+// MEDIA QUERIES =======================================================
+
+@media (max-width: 1440px)
+
+    .button__btn
+        width: 450px
+
+@media (max-width: 1300px)
+    .product
+        padding: 10px
+
+        &__top
+            flex-direction: column
+            align-items: center
+
+    .product-photo
+        &__large-inner
+            max-width: 100%
+
+    .product
+        &__options
+            width: 98%
+
+        &__label
+            display: inline-block
+            margin-top: 30px
+
+    .product__info
+        margin-right: 0
+
+        &-outer
+            justify-content: space-around
+            flex-wrap: wrap
+
+        &-column
+            width: 50%
+            justify-content: space-around
+
+    .product
+        &__buttons
+            position: static
+            margin-top: 40px
+
+        &__button
+            margin-top: 15px
+
+    .button
+        width: 90%
+        margin: 20px auto
+
+        &__btn
+            width: 100%
+
+@media (max-width: 670px)
+
+    .product-photo
+        flex-direction: column-reverse
+
+        &__large-inner
+            height: 350px
+
+    .scrollbar
+        flex-direction: row
+
+        &__link
+            height: 110px
+
+    .product__card
+        width: 100px
+        height: 120px
+
+        &-label
+            font-size: 14px
+            height: 40px
+            line-height: 40px
+
+        &-info
+            font-size: 12px
+            line-height: 140%
+            width: 90px
+
+@media (max-width: 480px)
+
+    .product-photo__large-inner
+        height: 250px
+
+    .scrollbar
+        flex-direction: row
+
+        &__link
+            height: 80px
+
+    .product__label
+        font-size: 35px
+
+    .var__top
+        font-size: 16px
+
+    .product__info
+        &-outer
+            margin-top: -15px
+
+        &-column
+            width: 100%
+            margin: 10px 0
+
+    .product__card
+        width: 125px
+        height: 135px
+
+        &-label
+            font-size: 16px
+            height: 45px
+            line-height: 45px
+
+        &-info
+            font-size: 14px
+            line-height: 140%
+            width: 120px
