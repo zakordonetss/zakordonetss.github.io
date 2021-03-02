@@ -1,0 +1,33 @@
+{
+  "name": "glasses",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "prebuild-dev": "shx rm -rf dist/*",
+    "build-dev": "parcel build ./index.html --no-minify --public-url ./",
+    "prebuild": "shx rm -rf dist/*",
+    "build": "parcel build ./index.html --public-url ./",
+    "push-gh-pages": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose"
+  },
+  "keywords": [],
+  "author": "zakordonest",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "shx": "^0.3.2"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "reset.css": "^2.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zakordonetss/Glasses.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zakordonetss/Glasses/issues"
+  },
+  "homepage": "https://github.com/zakordonetss/Glasses#readme",
+  "description": ""
+}
